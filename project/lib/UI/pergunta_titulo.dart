@@ -25,6 +25,22 @@ class PerguntaTituloState extends State<PerguntaTitulo> with SingleTickerProvide
     _fontSizeAnimationController.forward();
   }
 
+  @override 
+  void dispose() {
+    _fontSizeAnimationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(PerguntaTitulo oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget._pergunta != widget._pergunta) {
+      _fontSizeAnimationController.reset();
+      _fontSizeAnimationController.forward();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Material(
