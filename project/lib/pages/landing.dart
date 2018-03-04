@@ -8,12 +8,15 @@ class Landing extends StatelessWidget {
       color: Colors.greenAccent,
       child: new InkWell(
         onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new QuizPage())),
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text("Minha primeira página", style: new TextStyle(color: Colors.white, fontSize: 50.0, fontWeight: FontWeight.bold),),
-            new Text("Precione para continuar (em breve)", style: new TextStyle(color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),)
-          ],
+        child: new Container(
+          padding: new EdgeInsets.all(20.0),
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Text("Quiz App", style: new TextStyle(color: Colors.white, fontSize: 50.0, fontWeight: FontWeight.bold),),
+              new Text("Precione para continuar", style: new TextStyle(color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.bold),)
+            ],
+          )
         ),
       ),
     );
